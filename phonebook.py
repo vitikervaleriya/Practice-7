@@ -21,7 +21,7 @@ print("Table phone_book created")
 # Insert a single contact
 def insert_contact(name, phone):
     """Insert a single contact into phone_book"""
-    sql = "INSERT INTO phone_book (name, phone) VALUES (%s, %s) RETURNING id;"
+    sql = "INSERT INTO phone_book (name, phone) VALUES (%s, %s) ON CONFLICT (name, phone) DO NOTHING RETURNING id;"
     cur.execute(sql, (name, phone))
     contact_id = cur.fetchone()[0]
     conn.commit()
