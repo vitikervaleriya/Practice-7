@@ -10,7 +10,8 @@ sql_create_table = """
 CREATE TABLE IF NOT EXISTS phone_book (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
-    phone VARCHAR(15) NOT NULL
+    phone VARCHAR(15) NOT NULL,
+    UNIQUE(name, phone)
 )
 """
 cur.execute(sql_create_table)
