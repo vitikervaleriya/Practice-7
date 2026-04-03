@@ -67,6 +67,7 @@ def update_contact(contact_id, name=None, phone=None):
 
 # Example: update contact ID 1
 update_contact(1, phone="87011111111")
+update_contact(20, name = "Sanzhik")
 
 # Delete a contact
 def delete_contact(contact_id):
